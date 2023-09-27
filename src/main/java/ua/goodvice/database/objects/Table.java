@@ -1,11 +1,10 @@
-package ua.goodvice;
+package ua.goodvice.database.objects;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Table extends DatabaseObject {
     private final List<String> columnList;
-//    private final List<List<Object>> rows;
 
     private Table(String name, List<String> columnNames) {
         this.name = name;

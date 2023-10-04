@@ -9,7 +9,7 @@ public class Main {
     }
 
     /**
-     * My lovely method!
+     * My <i><u>lovely</u></i> method!
      * @param arguments super arguments
      */
     static void myMethod (int... arguments) {

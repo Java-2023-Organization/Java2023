@@ -1,18 +1,27 @@
 package ua.goodvice;
 
-import ua.goodvice.database.Database;
-import ua.goodvice.database.objects.Schema;
-import ua.goodvice.factory.database.DatabaseAbstractFactory;
-import ua.goodvice.factory.database.OracleFactory;
+import ua.goodvice.composite.CompositeGraphicObject;
+import ua.goodvice.composite.GraphicObject;
+import ua.goodvice.decorator.ColorDecorator;
+import ua.goodvice.decorator.SizeDecorator;
+import ua.goodvice.proxy.CircleProxy;
+import ua.goodvice.proxy.QuadrilateralProxy;
 
 public class Runner {
     public static void main(String[] args) {
-        DatabaseAbstractFactory databaseFactory = new OracleFactory(Database.getDatabaseInstance());
-        databaseFactory.createSchema("Zoo");
-        Schema schema = Database.getDatabaseInstance().getSchemaByName("Zoo");
-        schema.createTable("Ground", new String[]{"Name", "Age", "Weight"});
-        schema.createTable("Flying", new String[]{"Name", "Age", "Wingspan"});
-        System.out.println(Database.getDatabaseInstance());
-        System.out.println(schema);
+        CompositeGraphicObject compositeGraphicObject = new CompositeGraphicObject();
+
+        GraphicObject circle = new CircleProxy();
+        circle = new ColorDecorator(circle, "blue");
+        circle = new SizeDecorator(circle, 26);
+        compositeGraphicObject.add(circle);
+
+        GraphicObject rectangle = new QuadrilateralProxy();
+        rectangle = new ColorDecorator(rectangle, "purple");
+        rectangle = new SizeDecorator(rectangle, 11);
+        compositeGraphicObject.add(rectangle);
+
+        compositeGraphicObject.draw();
     }
+
 }

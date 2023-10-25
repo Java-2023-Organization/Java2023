@@ -19,22 +19,41 @@ public class Lab1 {
 //        todo think about low vs. capital letter
         final int a = 1;
         final int n = 2;
-        final int b = 1;
+        final int b = 0;
         final int m = 2;
 
         final int C = 2;
 
-        for (int i = 2; i > 1; i--) {
-
-        }
-
 //        todo char details
 //        todo console input
-        for (char i = a; i <= n; i++) {
-            for (char j = b; j <= m; j++) {
+        // todo char details + console input
 
+//        todo think about low vs. capital letter
+//        todo? joke (philosophy)
+
+        double S = 0;
+        l: for (char i = a; i <= n; i++) {
+            for (char j = b; j <= m; j++) {
+                if (j != 0 || i - C != 0) {
+                    System.out.println("Error! Division by zero.");
+                    break l;
+                }
+                S += (double)i/j/(i - C);
+//                System.out.println(123);
             }
         }
+        System.out.println("S = " + S);
+
+        /*int x = 1 + 2 *//*+ a*//*;
+        if (a < 3) {
+            int y = n + 3;
+            System.out.println(y);
+        }
+        System.out.println(x);*/
+
+        /*for (int i = 2; i > 1; i--) {
+
+        }*/
 
         /*int a; // оголошення змінної (declaration)
         a = 1; // ініціалізація змінної (initialization)

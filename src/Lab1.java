@@ -33,40 +33,21 @@ public class Lab1 {
         double S = 0;
         for (char i = a; i <= n; i++) {
             int denominator = i - C;
+            if (denominator == 0) {
+                showErrorAndExit();
+            }
             for (char j = b; j <= m; j++) {
-                if (j == 0 || denominator == 0) {
-                    System.out.println("Error! Division by zero.");
-                    System.exit(1);
-//                    return;
-//                    break l;
+                if (j == 0) {
+                    showErrorAndExit();
                 }
                 S += (double)i/j/denominator;
             }
         }
         System.out.println("S = " + S);
+    }
 
-//                System.out.println(123);
-
-        /*int x = 1 + 2 *//*+ a*//*;
-        if (a < 3) {
-            int y = n + 3;
-            System.out.println(y);
-        }
-        System.out.println(x);*/
-
-        /*for (int i = 2; i > 1; i--) {
-
-        }*/
-
-        /*int a; // оголошення змінної (declaration)
-        a = 1; // ініціалізація змінної (initialization)
-        int b = 1; // оголошення та ініціалізація змінної*/
-
-        /*System.err.println("RESULT:");
-        System.out.println(args[2]);
-        System.out.println("\u001B[35m123123");
-
-        String s = "ASD";
-        System.out.println(s.substring(1));*/
+    private static void showErrorAndExit() {
+        System.out.println("Error! Division by zero.");
+        System.exit(1);
     }
 }

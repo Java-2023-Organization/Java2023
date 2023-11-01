@@ -31,15 +31,16 @@ public class Lab1 {
 //        todo think about low vs. capital letter
 
         double S = 0;
-        l: for (char i = a; i <= n; i++) {
+        for (char i = a; i <= n; i++) {
+            int denominator = i - C;
             for (char j = b; j <= m; j++) {
-                if (j == 0 || i - C == 0) {
+                if (j == 0 || denominator == 0) {
                     System.out.println("Error! Division by zero.");
                     System.exit(1);
 //                    return;
 //                    break l;
                 }
-                S += (double)i/j/(i - C);
+                S += (double)i/j/denominator;
             }
         }
         System.out.println("S = " + S);

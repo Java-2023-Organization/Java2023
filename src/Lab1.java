@@ -17,9 +17,9 @@ public class Lab1 {
      */
     public static void main(String[] args) {
 //        todo think about low vs. capital letter
-        final int a = 1;
+        final int a = 3;
         final int n = 4;
-        final int b = 1;
+        final int b = 0;
         final int m = 2;
 
         final int C = 2;
@@ -30,16 +30,14 @@ public class Lab1 {
 
 //        todo think about low vs. capital letter
 
+        if (a <= C && C <= n || b <= 0 && 0 <= m) {
+            showErrorAndExit();
+        }
+
         double S = 0;
         for (char i = a; i <= n; i++) {
             int denominator = i - C;
-            if (denominator == 0) {
-                showErrorAndExit();
-            }
             for (char j = b; j <= m; j++) {
-                if (j == 0) {
-                    showErrorAndExit();
-                }
                 S += (double)i/j/denominator;
             }
         }

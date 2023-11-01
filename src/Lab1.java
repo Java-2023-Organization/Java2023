@@ -17,7 +17,7 @@ public class Lab1 {
      */
     public static void main(String[] args) {
 //        todo think about low vs. capital letter
-        final int a = 1;
+        final int a = 3;
         final int n = 4;
         final int b = 1;
         final int m = 2;
@@ -29,25 +29,21 @@ public class Lab1 {
         // todo char details + console input
 
 //        todo think about low vs. capital letter
-//        todo? joke (philosophy)
 
         double S = 0;
-        boolean wasDivisionByZero = false;
         l: for (char i = a; i <= n; i++) {
             for (char j = b; j <= m; j++) {
                 if (j == 0 || i - C == 0) {
                     System.out.println("Error! Division by zero.");
-                    wasDivisionByZero = true;
-//                    todo use return/System.exit
-                    break l;
+//                    todo use System.exit
+                    return;
+//                    break l;
                 }
                 S += (double)i/j/(i - C);
 //                System.out.println(123);
             }
         }
-        if (!wasDivisionByZero) {
-            System.out.println("S = " + S);
-        }
+        System.out.println("S = " + S);
 
         /*int x = 1 + 2 *//*+ a*//*;
         if (a < 3) {

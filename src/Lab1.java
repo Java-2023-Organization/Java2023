@@ -17,9 +17,9 @@ public class Lab1 {
      */
     public static void main(String[] args) {
 //        todo think about low vs. capital letter
-        final int a = 3;
+        final int a = 2;
         final int n = 4;
-        final int b = 0;
+        final int b = 1;
         final int m = 2;
 
         final int C = 2;
@@ -31,21 +31,16 @@ public class Lab1 {
 //        todo think about low vs. capital letter
 
         if (a <= C && C <= n || b <= 0 && 0 <= m) {
-            showErrorAndExit();
-        }
-
-        double S = 0;
-        for (char i = a; i <= n; i++) {
-            int denominator = i - C;
-            for (char j = b; j <= m; j++) {
-                S += (double)i/j/denominator;
+            System.out.println("Error! Division by zero.");
+        } else {
+            double S = 0;
+            for (char i = a; i <= n; i++) {
+                int denominator = i - C;
+                for (char j = b; j <= m; j++) {
+                    S += (double)i/j/denominator;
+                }
             }
+            System.out.println("S = " + S);
         }
-        System.out.println("S = " + S);
-    }
-
-    private static void showErrorAndExit() {
-        System.out.println("Error! Division by zero.");
-        System.exit(1);
     }
 }

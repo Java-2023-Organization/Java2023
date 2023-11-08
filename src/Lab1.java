@@ -1,12 +1,13 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * My program for first laboratory work
  */
 public class Lab1 {
-    int a = 1;
-
     /**
      * Standard entry point (method) for Java
-     *
+     * <p>
      * Variant: 6101
      * O1: -
      * O2: /
@@ -16,8 +17,21 @@ public class Lab1 {
      * @param args - standard arguments for passing values in Java program by console standard
      */
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x = 0;
+        do {
+            System.out.print("Please enter a number: ");
+            try {
+                x = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("You entered not a number!");
+            }
+            System.out.println(x);
+        } while (x != -123);
 //        todo think about low vs. capital letter
-        final int a = 2;
+//        todo console input for int -2 and cast to char
+        final int a = -2;
+        System.out.println((char) a);
         final int n = 4;
         final int b = 1;
         final int m = 2;
@@ -34,10 +48,11 @@ public class Lab1 {
             System.out.println("Error! Division by zero.");
         } else {
             double S = 0;
-            for (char i = a; i <= n; i++) {
+//            todo check case with negative values
+            for (char i = (char) a; i <= n; i++) {
                 int denominator = i - C;
                 for (char j = b; j <= m; j++) {
-                    S += (double)i/j/denominator;
+                    S += (double) i / j / denominator;
                 }
             }
             System.out.println("S = " + S);

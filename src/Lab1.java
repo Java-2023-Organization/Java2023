@@ -22,8 +22,13 @@ public class Lab1 {
         do {
             System.out.print("Please enter a number: ");
             try {
+//                todo check inner functionality in scope of InputMismatchException case
                 x = scanner.nextInt();
             } catch (InputMismatchException e) {
+//                todo !!!!!!!!!!!!!! check hasNextInt method
+//                todo check methods next vs nextLine
+//                scanner.next();
+                scanner.nextLine();
                 System.out.println("You entered not a number!");
             }
             System.out.println(x);

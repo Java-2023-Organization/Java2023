@@ -18,19 +18,29 @@ public class Lab1 {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int x = 0;
         do {
             System.out.print("Please enter a number: ");
-            try {
+
+//            todo research overloading method with radix input parameter (try to use 16-th radix and enter "A" as user)
+            if (scanner.hasNextInt()) {
+//                System.out.println("It is int");
+                x = scanner.nextInt();
+            } else {
+                scanner.next();
+                System.out.println("You entered not a number!");
+            }
+
+            /*try {
 //                todo check inner functionality in scope of InputMismatchException case
                 x = scanner.nextInt();
             } catch (InputMismatchException e) {
-//                todo !!!!!!!!!!!!!! check hasNextInt method
 //                todo check methods next vs nextLine
 //                scanner.next();
                 scanner.nextLine();
                 System.out.println("You entered not a number!");
-            }
+            }*/
             System.out.println(x);
         } while (x != -123);
 //        todo think about low vs. capital letter

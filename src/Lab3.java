@@ -1,8 +1,8 @@
 public class Lab3 {
     public static void main(String[] args) {
-        String s1 = "ASD";
+        String s1 = "AS";
         String s2 = s1;
-//        s1 += "Q";
+        s1 += "D";
         System.out.println(s2); //ASD?
 
         int a = 0;
@@ -13,7 +13,9 @@ public class Lab3 {
 
         s1 = new String("ASD");
         s2 = new String("ASD");
-        System.out.println(s1 == s2);// true
+//        s2 = "ASD";
+        System.out.println("s1 == s2: " + (s1 == s2));// true
+        System.out.println(s1.equals(s2));// true
 //        todo StringPool
     }
 }

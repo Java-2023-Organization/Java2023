@@ -1,11 +1,17 @@
 public class Lab3 {
     public static void main(String[] args) {
 
+        System.out.println("\\");
+
+        String text = "Hello world. How are you.";
+        final String[] split = text.split("\\. ");
+//todo check why dot not exist in first element (+try to keep both)
+
         StringBuilder stringBuilder = new StringBuilder("ASD");
 
         StringBuffer stringBuffer = new StringBuffer("ASD");
 
-        stringBuilder.append("Q");
+        stringBuilder.append("QЇ");
         stringBuffer.append("Q");
 
         stringBuffer.append(1);

@@ -3,9 +3,8 @@ public class Lab3 {
 
         System.out.println("\\");
 
-        String text = "Hello world. How are you.";
-        final String[] split = text.split("\\. ");
-//todo check why dot not exist in first element (+try to keep both)
+        String text = "Hello world? How are you! I am ok. Bye.";
+        final String[] split = text.split("(?<=[.!?]) ");
 
         StringBuilder stringBuilder = new StringBuilder("ASD");
 

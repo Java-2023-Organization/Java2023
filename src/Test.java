@@ -1,5 +1,5 @@
-import lab4.Student;
+import lab4.ExperimentalStudent;
 
 public class Test {
-    private static Student.Main main;
+    private static ExperimentalStudent.Main main;
 }

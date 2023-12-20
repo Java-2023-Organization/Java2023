@@ -1,39 +1,57 @@
 package lab4;
 
-//todo check "final" key word
-//todo nested==static vs. inner vs. embedded classes
 public class Student {
     private String name;
-    static private Main main;
+    private String surname;
+    private float averageMark;
+    private Group group;
+    private String faculty;
 
-    public static void main(String[] args) {
-        main.main(new String[] {});
-        Student student = new Student();
-//        InternalMain main1;
-
-//        todo check why it is needed??))) and what is the name of this case?
-//        todo is it possible to use method/function inside other methode/function (except lambda case)
-        class InternalMain {
-            public static void main(String[] args) {
-                System.out.println("InternalMain");
-                Student student = new Student();
-            }
-        }
-
-        InternalMain.main(new String[] {});
-        InternalMain main2 = null;
-        main2.main(new String[] {});
+    public Student(String name, String surname, float averageMark, Group group, String faculty) {
+        this.name = name;
+        this.surname = surname;
+        this.averageMark = averageMark;
+        this.group = group;
+        this.faculty = faculty;
     }
 
-    /*static void method() {
-        main.Internal
-    }*/
+    public String getName() {
+        return name;
+    }
 
-//    todo check why static is needed
-    public /*static*/ class Main {
-        public static void main(String[] args) {
-            System.out.println("Main.main()");
-            Student student = new Student();
-        }
+    public String getSurname() {
+        return surname;
+    }
+
+    public float getAverageMark() {
+        return averageMark;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setAverageMark(float averageMark) {
+        this.averageMark = averageMark;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
     }
 }

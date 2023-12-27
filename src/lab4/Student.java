@@ -1,6 +1,6 @@
 package lab4;
 
-public class Student {
+public class Student implements Comparable {
     private String name;
     private String surname;
     private float averageMark;
@@ -53,5 +53,11 @@ public class Student {
 
     public void setFaculty(String faculty) {
         this.faculty = faculty;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+//        todo check type
+        return group.compareTo(/*this.*/((Student) o).group);
     }
 }

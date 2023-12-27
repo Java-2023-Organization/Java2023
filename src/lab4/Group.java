@@ -1,13 +1,14 @@
 package lab4;
 
 public enum Group {
-    IO61/*("IO-61")*/,
-    IO62/*("IO-62")*/;
+    IO_61("IO-61"),
+    IO62("IO-62");
 
-    /*private String name;
+    private String name;
 
     Group(String name) {
-        super(name, 1);
+        this.name = name;
+//        super(name, 1);
     }
 
     public String getName() {
@@ -16,8 +17,8 @@ public enum Group {
 
     @Override
     public String toString() {
-        return super.toString();
-    }*/
+        return name;
+    }
 
     /*Group(String s) {
 
